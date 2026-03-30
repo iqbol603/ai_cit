@@ -1,0 +1,238 @@
+/* style.css - Улучшенная и современная версия */
+:root {
+    --primary-color: #4A90E2;    /* Основной синий цвет */
+    --success-color: #48BB78;    /* Цвет успеха (зеленый) */
+    --error-color: #F56565;      /* Цвет ошибки (красный) */
+    --bg-color: #F0F2F5;         /* Цвет фона экрана */
+    --text-main: #2D3748;        /* Основной цвет текста */
+    --text-muted: #718096;       /* Цвет вспомогательного текста */
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text-main);
+}
+
+.quiz-box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 95%;
+    max-width: 450px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-size: 22px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 10px;
+}
+
+/* Меню разделов */
+.section-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.section-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+    background: #ffffff;
+    border: 2px solid #edf2f7;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.section-btn:hover {
+    border-color: var(--primary-color);
+    background: #f8fbff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.1);
+}
+
+.section-btn span {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.section-btn small {
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.section-btn.all {
+    background: linear-gradient(135deg, #4A90E2, #357ABD);
+    color: white;
+    border: none;
+}
+
+/* Статус и Прогресс */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.timer-box {
+    background: #edf2f7;
+    padding: 4px 12px;
+    border-radius: 20px;
+    color: var(--text-main);
+}
+
+.timer-low {
+    background: #FFF5F5;
+    color: var(--error-color);
+    animation: blink 0.8s infinite;
+}
+
+/* Вопросы и Ответы */
+#question-text {
+    font-size: 17px;
+    line-height: 1.5;
+    margin: 20px 0;
+    text-align: left;
+    font-weight: 600;
+}
+
+.options-container {
+    display: grid;
+    gap: 10px;
+}
+
+.option-btn {
+    padding: 14px 18px;
+    border: 2px solid #edf2f7;
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    text-align: left;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.option-btn:hover:not(:disabled) {
+    border-color: var(--primary-color);
+    background: #f0f7ff;
+}
+
+/* Цвета результатов */
+.correct-highlight {
+    background: #C6F6D5 !important;
+    border-color: var(--success-color) !important;
+    color: #22543D;
+}
+
+.pop {
+    animation: popScale 0.3s ease;
+    background: #C6F6D5;
+    border-color: var(--success-color);
+}
+
+.shake {
+    animation: shakeAnim 0.4s ease;
+    background: #FED7D7;
+    border-color: var(--error-color);
+}
+
+/* Пояснение */
+.explanation-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #EBF8FF;
+    border-radius: 12px;
+    border-left: 5px solid var(--primary-color);
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.next-btn {
+    width: 100%;
+    margin-top: 15px;
+    padding: 14px;
+    border-radius: 12px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+}
+
+.next-btn:hover {
+    background: #357ABD;
+}
+
+.hidden { display: none !important; }
+
+/* Анимации */
+@keyframes popScale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+@keyframes shakeAnim {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}
+
+@keyframes blink {
+    50% { opacity: 0.6; }
+}
+
+.result-screen {
+    animation: fadeIn 0.8s ease;
+    padding: 20px 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.rank-badge {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Дополнительно для прогресс-бара */
+.progress-container {
+    height: 8px;
+    background: #edf2f7;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 100%;
+    background: var(--primary-color);
+    width: 0%;
+    transition: width 0.4s ease;
+}

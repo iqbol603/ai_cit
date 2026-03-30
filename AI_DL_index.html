@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Literacy & AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --success-color: #27ae60;
+        }
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            background-color: #f4f7f9; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+        }
+        main { flex: 1; }
+
+        /* Интихоби забон */
+        .language-switcher img {
+            width: 30px; height: 20px;
+            margin-left: 12px; cursor: pointer;
+            border-radius: 3px; transition: transform 0.2s;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .language-switcher img:hover { transform: scale(1.2); }
+
+        /* Дизайни кортҳои меню */
+        .menu-card {
+            cursor: pointer; transition: all 0.3s ease;
+            border: none; border-radius: 15px; background: #fff;
+        }
+        .menu-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important; }
+        
+        .icon-circle {
+            width: 80px; height: 80px; background: #eef2f3;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 2.5rem; margin: 0 auto 20px;
+        }
+
+        /* Қисматҳои пинҳон барои SPA */
+        .content-section { display: none; }
+        .active-section { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        footer { background: #2c3e50; color: white; padding: 30px 0; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#" onclick="showSection('menu')">Digital Literacy & AI</a>
+        <div class="language-switcher ms-auto d-flex align-items-center">
+            <a href="index.html" title="Тоҷикӣ"><img src="https://flagcdn.com/w40/tj.png" alt="TJ"></a>
+            <a href="fa/index.html" title="فارسی"><img src="https://flagcdn.com/w40/ir.png" alt="FA"></a>
+            <a href="ru/index.html" title="Русский"><img src="https://flagcdn.com/w40/ru.png" alt="RU"></a>
+            <a href="en/index.html" title="English"><img src="https://flagcdn.com/w40/us.png" alt="US"></a>
+        </div>
+    </div>
+</nav>
+
+<header id="hero" class="hero-section text-center text-white d-flex align-items-center" style="background: linear-gradient(135deg, #2c3e50, #4ca1af); padding: 80px 0;">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Хуш омадед ба ҷаҳони ҲМ</h1>
+        <p class="lead fs-3">Платформаи таълимӣ оид ба ҳуши сунъӣ ва саводи рақамӣ барои ҳама.</p>
+    </div>
+</header>
+
+<main class="container my-5">
+    <div id="section-menu" class="content-section active-section">
+        <div class="row g-4 justify-content-center">
+            
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm p-4 text-center menu-card" onclick="showSection('articles')">
+                    <div class="icon-circle">📄</div>
+                    <h3 class="fw-bold">Мақолаҳо</h3>
+                    <p class="text-muted small">Мутолиаи мақолаҳои навтарин ва ҷолиб оид ба технология.</p>
+                    <button class="btn btn-outline-primary mt-auto w-100">Хондан</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm p-4 text-center menu-card" onclick="showSection('learning')">
+                    <div class="icon-circle">📚</div>
+                    <h3 class="fw-bold">Асосҳои ҲМ</h3>
+                    <p class="text-muted small">Омӯзиши бахшҳои таълимӣ ва маводҳои назариявӣ.</p>
+                    <button class="btn btn-outline-primary mt-auto w-100">Омӯхтан</button>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm p-4 text-center menu-card" onclick="window.location.href='ai_quiz_tj/index.html'">
+                    <div class="icon-circle">🎯</div>
+                    <h3 class="fw-bold">Донишсанҷӣ</h3>
+                    <p class="text-muted small">Санҷиши дониш бо истифода аз тестҳои интерактивӣ.</p>
+                    <button class="btn btn-success mt-auto w-100 text-white">Оғози тест</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="section-articles" class="content-section">
+        <button class="btn btn-secondary mb-4" onclick="showSection('menu')">← Баргашт</button>
+        <h2 class="fw-bold mb-4 border-bottom pb-2">Мақолаҳои таълимӣ</h2>
+        <div id="articles-list" class="row g-4">
+            <p class="text-muted">Дар ҳоли омодасозӣ...</p>
+        </div>
+    </div>
+
+    <div id="section-learning" class="content-section">
+        <button class="btn btn-secondary mb-4" onclick="showSection('menu')">← Баргашт</button>
+        <h2 class="fw-bold mb-4 border-bottom pb-2">Маводҳои омӯзишӣ</h2>
+        <div id="learning-content" class="row g-3">
+            <p class="text-muted">Дар ҳоли омодасозӣ...</p>
+        </div>
+    </div>
+</main>
+
+<footer class="text-center">
+    <div class="container">
+        <p class="mb-2 fw-bold">Digital Literacy & AI Education</p>
+        <p class="mb-0 small opacity-75">&copy; 2026 Ҳамаи ҳуқуқҳо маҳфузанд. ai.cit.tj</p>
+    </div>
+</footer>
+
+<script>
+    function showSection(sectionId) {
+        // Пинҳон кардани ҳама бахшҳо
+        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active-section'));
+        // Нишон додани бахши интихобшуда
+        const target = document.getElementById('section-' + sectionId);
+        target.classList.add('active-section');
+
+        // Hero-ро танҳо дар менюи асосӣ нишон медиҳем
+        const hero = document.getElementById('hero');
+        hero.style.display = (sectionId === 'menu') ? 'block' : 'none';
+        window.scrollTo(0, 0);
+    }
+</script>
+</body>
+</html>

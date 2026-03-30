@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Literacy & AI Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Digital Literacy & AI</a>
+        <div class="language-switcher ms-auto">
+            <a href="../tj/index.html" title="Tajik"><img src="https://flagcdn.com/w40/tj.png" alt="TJ"></a>
+            <a href="../ru/index.html" title="Russian" style="margin-left: 10px;"><img src="https://flagcdn.com/w40/ru.png" alt="RU"></a>
+            <a href="#" title="English"><img src="https://flagcdn.com/w40/gb.png" alt="EN" style="border: 1px solid white; margin-left: 10px;"></a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero-section text-center text-white d-flex align-items-center">
+    <div class="container">
+        <h1 class="display-4">Welcome to the World of AI</h1>
+        <p class="lead">Educational platform for Artificial Intelligence and Digital Literacy.</p>
+        
+        <div class="mt-4 p-4 bg-light rounded shadow-lg text-dark mx-auto" style="max-width: 550px;">
+            <label class="form-label fw-bold">Select a section to start the test:</label>
+            <select id="section-select" class="form-select mb-3" onchange="loadQuestions(this.value)">
+                <option value="all">All Sections</option>
+                <option value="Section 1: AI BASICS AND HISTORY">Section 1: AI Basics</option>
+                <option value="Section 2: HUMAN BRAIN AND AI">Section 2: Brain & AI</option>
+                <option value="Section 3: COMPUTER VISION AND SPEECH">Section 3: Vision & Speech</option>
+                <option value="Section 4: SCIENCE AND EDUCATION">Section 4: Science & Education</option>
+                <option value="Section 5: AI ETHICS AND SAFETY">Section 5: Ethics & Safety</option>
+                <option value="Section 6: ECOLOGY AND SPACE">Section 6: Ecology & Space</option>
+                <option value="Section 7: HEALTHCARE">Section 7: Healthcare</option>
+                <option value="Section 8: INDUSTRY AND TECHNOLOGY">Section 8: Industry & Tech</option>
+                <option value="Section 9: CREATIVITY AND PROJECTS">Section 9: Creativity</option>
+            </select>
+        </div>
+    </div>
+</header>
+
+<main class="container my-5">
+    <div id="quiz-app" class="quiz-box mx-auto bg-white p-4 shadow">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="status-bar m-0 fw-bold">Question: <span id="current-question-num">0</span></div>
+            <div id="timer-box" class="fw-bold text-danger fs-4">⏱ <span id="timer-seconds">30</span>s</div>
+            <div class="status-bar m-0 fw-bold">Score: <span id="score">0</span></div>
+        </div>
+
+        <div class="progress-container mb-4" style="height: 10px; background: #eee; border-radius: 5px; overflow: hidden;">
+            <div id="progress-bar" style="width: 0%; height: 100%; background: #00d2ff; transition: 0.3s;"></div>
+        </div>
+
+        <h3 id="question" class="mb-4 text-center">Loading questions...</h3>
+        
+        <div id="options" class="options-container d-grid gap-2"></div>
+
+        <div id="explanation-box" class="explanation-box hidden mt-4 p-3 border-start border-4 border-info bg-light">
+            <p id="explanation-text"></p>
+            <button id="next-btn" class="btn btn-primary w-100">Next Question</button>
+        </div>
+    </div>
+</main>
+
+<audio id="sound-correct" src="https://www.myinstants.com/media/sounds/correct.mp3"></audio>
+<audio id="sound-wrong" src="https://www.myinstants.com/media/sounds/wrong.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

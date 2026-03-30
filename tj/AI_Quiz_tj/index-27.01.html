@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Literacy & AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Digital Literacy & AI</a>
+        <div class="language-switcher ms-auto">
+            <a href="#"><img src="https://flagcdn.com/w40/tj.png" alt="TJ"></a>
+        </div>
+    </div>
+</nav>
+
+<header class="hero-section text-center text-white d-flex align-items-center" style="background: #2c3e50; padding: 60px 0;">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Хуш омадед ба ҷаҳони ҲМ</h1>
+        <p class="lead">Платформаи таълимӣ оид ба ҳуши сунъӣ ва саводи рақамӣ барои ҳама.</p>
+        
+        <div class="mt-4 p-4 bg-light rounded shadow-sm text-dark mx-auto" style="max-width: 500px;">
+            <label class="form-label fw-bold">Бахшро интихоб кунед:</label>
+            <select id="section-select" class="form-select mb-3" onchange="loadQuestions(this.value)">
+                <option value="all">Ҳамаи бахшҳо</option>
+                <option value="Бахши 1: АСОСҲО ВА ТАЪРИХИ AI">Бахши 1: Асосҳо</option>
+                <option value="Бахши 2: МАҒЗИ САР ВА AI">Бахши 2: Мағзи сар</option>
+                <option value="Бахши 3: БИНОИИ КОМПЮТЕРӢ ВА НУТҚ">Бахши 3: Биноӣ ва Нутқ</option>
+                <option value="Бахши 4: ИЛМ ВА МАОРИФ">Бахши 4: Илм ва Маориф</option>
+                <option value="Бахши 5: АХЛОҚ ВА АМНИЯТИ ҲМ">Бахши 5: Ахлоқ ва Амният</option>
+                <option value="Бахши 6: ЭКОЛОГИЯ ВА КАЙҲОН">Бахши 6: Экология</option>
+                <option value="Бахши 7: ТАНДУРУСТӢ">Бахши 7: Тандурустӣ</option>
+                <option value="Бахши 8: САНОАТ ВА ТЕХНОЛОГИЯ">Бахши 8: Саноат</option>
+                <option value="Бахши 9: ЭҶОДКОРӢ ВА ЛОИҲАҲО">Бахши 9: Эҷодкорӣ</option>
+            </select>
+        </div>
+    </div>
+</header>
+
+<main class="container my-5">
+    <div id="quiz-app" class="quiz-box mx-auto">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <div class="status-bar m-0">Саволи: <span id="current-question-num">0</span></div>
+            <div id="timer-box" class="fw-bold text-danger fs-4">⏱ <span id="timer-seconds">30</span>с</div>
+            <div class="status-bar m-0">Хол: <span id="score">0</span></div>
+        </div>
+
+        <div class="progress-container">
+            <div id="progress-bar"></div>
+        </div>
+
+        <h3 id="question" class="mb-4">Барои оғози тест бахшро интихоб кунед...</h3>
+        
+        <div id="options" class="options-container">
+            </div>
+
+        <div id="explanation-box" class="explanation-box hidden">
+            <p id="explanation-text"></p>
+            <button id="next-btn" class="next-btn">Саволи навбатӣ</button>
+        </div>
+    </div>
+</main>
+
+<audio id="sound-correct" src="https://www.myinstants.com/media/sounds/correct.mp3"></audio>
+<audio id="sound-wrong" src="https://www.myinstants.com/media/sounds/wrong.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

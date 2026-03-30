@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سواد دیجیتال و هوش مصنوعی</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --success-color: #27ae60;
+        }
+        body { 
+            font-family: 'Vazirmatn', 'Tahoma', sans-serif; 
+            background-color: #f4f7f9; 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            text-align: right;
+        }
+        main { flex: 1; }
+
+        /* انتخاب زبان */
+        .language-switcher img {
+            width: 30px; height: 20px;
+            margin-right: 12px; cursor: pointer;
+            border-radius: 3px; transition: transform 0.2s;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .language-switcher img:hover { transform: scale(1.2); }
+
+        /* طراحی کارت‌ها */
+        .menu-card {
+            cursor: pointer; transition: all 0.3s ease;
+            border: none; border-radius: 15px; background: #fff;
+        }
+        .menu-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important; }
+        
+        .icon-circle {
+            width: 80px; height: 80px; background: #eef2f3;
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 2.5rem; margin: 0 auto 20px;
+        }
+
+        /* بخش‌های SPA */
+        .content-section { display: none; }
+        .active-section { display: block; animation: fadeIn 0.5s; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+        footer { background: #2c3e50; color: white; padding: 30px 0; margin-top: 50px; }
+        
+        /* Исправление для значка стрелки в RTL */
+        .ms-auto { margin-right: auto !important; margin-left: 0 !important; }
+        .me-3 { margin-left: 1rem !important; margin-right: 0 !important; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#" onclick="showSection('menu')">Digital Literacy & AI</a>
+        <div class="language-switcher ms-auto d-flex align-items-center">
+            <a href="../index.html" title="تاجیکی"><img src="https://flagcdn.com/w40/tj.png" alt="TJ"></a>
+            <a href="index.html" title="فارسی"><img src="https://flagcdn.com/w40/ir.png" alt="FA"></a>
+            <a href="../ru/index.html" title="روسی"><img src="https://flagcdn.com/w40/ru.png" alt="RU"></a>
+            <a href="../en/index.html" title="انگلیسی"><img src="https://flagcdn.com/w40/us.png" alt="US"></a>
+        </div>
+    </div>
+</nav>
+
+<header id="hero" class="hero-section text-center text-white d-flex align-items-center" style="background: linear-gradient(135deg, #2c3e50, #4ca1af); padding: 80px 0;">
+    <div class="container">
+        <h1 class="display-4 fw-bold">به دنیای هوش مصنوعی خوش آمدید</h1>
+        <p class="lead fs-3">پلتفرم آموزشی برای یادگیری هوش مصنوعی و سواد دیجیتال برای همه.</p>
+    </div>
+</header>
+
+<main class="container my-5">
+    <div id="section-menu" class="content-section active-section">
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm p-4 text-center menu-card" onclick="showSection('articles')">
+                    <div class="icon-circle">📄</div>
+                    <h3 class="fw-bold">مقالات</h3>
+                    <p class="text-muted small">آخرین و جذاب‌ترین مقالات درباره فناوری را بخوانید.</p>
+                    <button class="btn btn-outline-primary mt-auto w-100">بخوانید</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm p-4 text-center menu-card" onclick="showSection('learning')">
+                    <div class="icon-circle">📚</div>
+                    <h3 class="fw-bold">مبانی هوش مصنوعی</h3>
+                    <p class="text-muted small">بخش‌های آموزشی را از پایگاه داده ما بیاموزید.</p>
+                    <button class="btn btn-outline-primary mt-auto w-100">یادگیری</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm p-4 text-center menu-card" onclick="window.location.href='../ai_quiz_fa/index.html'">
+                    <div class="icon-circle">🎯</div>
+                    <h3 class="fw-bold">آزمون</h3>
+                    <p class="text-muted small">دانش خود را با تست‌های تعاملی ما بسنجید.</p>
+                    <button class="btn btn-success mt-auto w-100 text-white">شروع آزمون</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="section-articles" class="content-section">
+        <button class="btn btn-secondary mb-4" onclick="showSection('menu')">→ بازگشت</button>
+        <h2 class="fw-bold mb-4 border-bottom pb-2">مقالات آموزشی</h2>
+        <div id="articles-list" class="row g-4"></div>
+    </div>
+
+    <div id="section-learning" class="content-section">
+        <button class="btn btn-secondary mb-4" onclick="showSection('menu')">→ بازگشت</button>
+        <h2 class="fw-bold mb-4 border-bottom pb-2">مواد آموزشی</h2>
+        <div id="learning-content" class="row g-3"></div>
+    </div>
+</main>
+
+<footer class="text-center">
+    <div class="container">
+        <p class="mb-2 fw-bold">Digital Literacy & AI Education</p>
+        <p class="mb-0 small opacity-75">© 2026 تمامی حقوق محفوظ است. ai.cit.tj</p>
+    </div>
+</footer>
+
+<script src="articles/articles.js"></script>
+<script src="learning/parts.js"></script>
+<script>
+const currentLang = document.documentElement.lang || 'fa';
+
+function showSection(sectionId) {
+    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active-section'));
+    const target = document.getElementById('section-' + sectionId);
+    if (target) target.classList.add('active-section');
+
+    const hero = document.getElementById('hero');
+    if (hero) hero.style.display = (sectionId === 'menu') ? 'block' : 'none';
+
+    if (sectionId === 'articles') {
+        renderList(typeof articleFiles !== 'undefined' ? articleFiles : [], 'articles-list', 'articles');
+    }
+    if (sectionId === 'learning') {
+        renderList(typeof learningParts !== 'undefined' ? learningParts : [], 'learning-content', 'learning');
+    }
+    window.scrollTo(0, 0);
+}
+
+function renderList(filesArray, containerId, folderName) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+
+    container.innerHTML = ''; 
+    if (filesArray.length === 0) {
+        container.innerHTML = '<p class="text-muted p-3">محتوایی یافت نشد.</p>';
+        return;
+    }
+
+    const listGroup = document.createElement('div');
+    listGroup.className = 'list-group shadow-sm w-100';
+
+    filesArray.forEach((file, index) => {
+        const cleanName = file.replace(/\.html$/i, '');
+        const btnText = (folderName === 'learning') ? 'یادگیری' : 'بخوانید';
+        const label = (folderName === 'learning') ? `بخش ${index + 1}` : `${index + 1}`;
+        
+        const encodedFile = encodeURIComponent(file).replace(/%2F/g, '/');
+
+        listGroup.innerHTML += `
+            <a href="${folderName}/${encodedFile}" class="list-group-item list-group-item-action d-flex align-items-center py-3">
+                <span class="badge bg-secondary me-3" style="min-width: 70px;">${label}</span>
+                <span class="fw-medium text-dark">${cleanName}</span>
+                <span class="ms-auto text-primary small fw-bold">← ${btnText}</span>
+            </a>
+        `;
+    });
+    container.appendChild(listGroup);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+:root { --dark-bg: #0f2027; }
+body { font-family: 'Roboto', sans-serif; background-color: #f8f9fa; }
+.hero-section { height: 60vh; background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
+.language-switcher img { width: 30px; height: 20px; margin-left: 10px; border-radius: 3px; transition: 0.3s; border: 1px solid rgba(255,255,255,0.2); }
+.active-flag { border: 2px solid #ffd700; }
+.card { border: none; border-radius: 15px; transition: 0.3s; }
+.card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important; }

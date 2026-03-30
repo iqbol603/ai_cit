@@ -1,0 +1,13 @@
+# Иҷозат додани дастрасӣ ба ҳамаи файлҳо
+Options +FollowSymLinks
+
+# Муайян кардани файли асосӣ
+DirectoryIndex index.html index.htm
+
+# Пешгирӣ аз хатогии 403 ҳангоми кушодани папкаҳо
+Options -Indexes
+
+<FilesMatch "\.(html|htm|js|css|png|jpg|jpeg|gif)$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>

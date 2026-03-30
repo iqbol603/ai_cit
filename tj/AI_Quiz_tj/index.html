@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ҳуши маснуъӣ ва Саводи рақамӣ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Digital Literacy & ҲМ</a>
+        <div class="language-switcher">
+    		<a href="index.html" title="Тоҷикӣ"><img src="https://flagcdn.com/w40/tj.png" alt="TJ"></a>
+    		<a href="fa/index.html" title="فارسی"><img src="https://flagcdn.com/w40/ir.png" alt="FA"></a>
+   		<a href="ru/index.html" title="Русский"><img src="https://flagcdn.com/w40/ru.png" alt="RU"></a>
+    		<a href="en/index.html" title="English"><img src="https://flagcdn.com/w40/us.png" alt="US"></a>
+	</div>
+    </div>
+</nav>
+
+<header class="hero-section text-center text-white d-flex align-items-center">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Хуш омадед ба олами ҲМ</h1>
+        <p class="lead">Платформаи таълимӣ ва донишсанҷӣ оид ба ҳуши маснуъӣ ва саводи рақамӣ.</p>
+        <a href="#articles" class="btn btn-primary btn-lg px-5">Оғози омӯзиш</a>
+    </div>
+</header>
+
+<main class="container my-5">
+    <div class="row" id="articles">
+        <h2 class="mb-4 text-center">Мақолаҳои навтарин</h2>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Ҳуши маснуъӣ чист?</h5>
+                    <p class="card-text text-muted">Дар ин мақола мо асосҳои ҲМ-ро барои шурӯъкунандагон баррасӣ мекунем...</p>
+                    <button onclick="readArticle('tj/articles_tj/article1.html')" class="btn btn-outline-primary">Хондан</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <div class="section-quiz text-center bg-white p-5 rounded shadow-sm border">
+        <h2 class="fw-bold">Донишсанҷӣ</h2>
+        <p class="lead">Дониши худро бо тестҳои махсус оид ба технологияҳои муосир санҷед.</p>
+        <button class="btn btn-success btn-lg px-5" onclick="startQuiz()">Оғоз</button>
+    </div>
+</main>
+
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <p class="mb-0">&copy; 2026 Digital Literacy & AI Education. ai.cit.tj</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="index.js"></script>
+</body>
+</html>

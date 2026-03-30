@@ -1,0 +1,113 @@
+/* --- Основные настройки --- */
+:root {
+    --primary-blue: #2c5364;
+    --light-cyan: #00d2ff;
+    --deep-dark: #0f2027;
+    --glass-white: rgba(255, 255, 255, 0.95);
+}
+
+body {
+    background-color: #f4f7f6;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* --- ШАПКА (Hero Section) --- */
+.hero-section {
+    background: linear-gradient(135deg, var(--deep-dark) 0%, #203a43 50%, var(--primary-blue) 100%) !important;
+    padding: 80px 0 !important;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 4px solid var(--light-cyan);
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0px 4px 15px rgba(0,0,0,0.5);
+    margin-bottom: 15px;
+}
+
+.hero-section .lead {
+    color: #e0f7fa !important;
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+/* Блок выбора внутри шапки */
+.hero-section .bg-light {
+    background: var(--glass-white) !important;
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+    border-radius: 15px !important;
+}
+
+/* --- КОНТЕЙНЕР ТЕСТА (Quiz Box) --- */
+.quiz-box {
+    max-width: 700px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* --- ТАЙМЕР --- */
+#timer-box {
+    background: #fff;
+    border: 2px solid #dc3545 !important;
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.2);
+}
+
+/* --- ПРОГРЕСС-БАР --- */
+.progress-container {
+    height: 12px;
+    background: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+    transition: width 0.4s ease;
+}
+
+/* --- КНОПКИ ОТВЕТОВ --- */
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-btn {
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    background: #fff;
+    font-size: 1.1rem;
+    text-align: left;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    color: #333;
+}
+
+.option-btn:hover {
+    border-color: var(--light-cyan);
+    background-color: #f0fbff;
+    transform: translateY(-2px);
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+}
+
+/* Цвета правильных и неправильных ответов */
+.btn-success {
+    background-color: #28a745 !important;
+    color: white !important;
+    border
